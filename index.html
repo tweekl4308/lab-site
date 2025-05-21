@@ -12,14 +12,21 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
-    // Конфигурация GA
     gtag('config', 'G-KJF5HXYY19');
 
-    // Пример получения User-ID (замени на реальный ID)
-    var userId = 'USER_ID'; // <- сюда нужно подставить реальный уникальный идентификатор пользователя
+
+    var userId = 'USER_ID'; 
 
     if (userId) {
       gtag('set', {'user_id': userId});
+    }
+
+    if (document.referrer.includes("search.mycustomengine.com")) {
+      gtag('event', 'page_view', {
+        page_location: window.location.href,
+        page_referrer: document.referrer,
+        traffic_type: 'organic'
+      });
     }
   </script>
 
