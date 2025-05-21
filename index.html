@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Локальный тест сайта</title>
 
   <!-- Google tag (gtag.js) -->
@@ -12,7 +12,15 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
+    // Конфигурация GA
     gtag('config', 'G-KJF5HXYY19');
+
+    // Пример получения User-ID (замени на реальный ID)
+    var userId = 'USER_ID'; // <- сюда нужно подставить реальный уникальный идентификатор пользователя
+
+    if (userId) {
+      gtag('set', {'user_id': userId});
+    }
   </script>
 
   <style>
